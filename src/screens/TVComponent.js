@@ -42,4 +42,4 @@ const TvComponent = ({navigation}) => {
     )
 }
 
-export default TvComponent
+export default TvComponent;

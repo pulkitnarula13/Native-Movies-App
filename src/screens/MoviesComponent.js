@@ -32,12 +32,12 @@ const MoviesComponent = ({navigation}) => {
 
     return (
         <View>
-            <FlatList
-                horizontal={false}
-                data={data}
-                renderItem={renderItem}
-                keyExtractor={(item) => item.name}
-            />
+        <FlatList
+            horizontal={false}
+            data={data}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.name}
+        />
         </View>
     )
 }

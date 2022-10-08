@@ -2,22 +2,46 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { NavigationContainer } from "@react-navigation/native";
-import MoviesComponent from './src/screens/MoviesComponent';
-import SearchComponent from './src/screens/SearchComponent';
-import TVComponent from './src/screens/TVComponent';
 import { NativeBaseProvider } from 'native-base';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import home from './src/components/home';
+import DetailScreen from './src/screens/DetailScreen';
 
-const Tab = createMaterialTopTabNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NativeBaseProvider>
       <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen name="Movies" component={MoviesComponent} />
-          <Tab.Screen name="Search" component={SearchComponent} />
-          <Tab.Screen name="TV" component={TVComponent} />
-        </Tab.Navigator>
+        <Stack.Navigator>
+
+          <Stack.Screen
+            name="home"
+            component={home}
+            options={{
+              title: "Movies",
+              headerStyle: {
+                backgroundColor: "blue",
+              },
+              headerTitleStyle: {
+                color: "#fff",
+              },
+            }}
+          />
+          <Stack.Screen
+            name="Detail"
+            component={DetailScreen}
+            options={{
+              title: "Movies App",
+              headerStyle: {
+                backgroundColor: "#2c3e50",
+              },
+              headerTitleStyle: {
+                color: "#fff",
+              },
+            }}
+          />
+        </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
   );
