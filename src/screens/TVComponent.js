@@ -21,7 +21,7 @@ const TvComponent = ({navigation}) => {
     const renderItem = (moviewData) => {
         return (
             <View>
-                <MovieCard movie={moviewData} navigation={navigation} />
+                <MovieCard category={"movie"} movie={moviewData} navigation={navigation} />
             </View>
         )
     }

@@ -7,7 +7,7 @@ import { API_KEY, BASE_URL } from "../constants/api";
 const DetailScreen = ({ route }) => {
     const { id, category } = route.params;
 
-    const [showDetail, setShowDetail] = useState()
+    const [showDetail, setShowDetail] = useState();
 
     const loadInformation = () => {
         axios.get(

@@ -33,7 +33,7 @@ const SearchComponent = ({ navigation }) => {
   const renderItem = (moviewData) => {
     return (
       <View>
-        <MovieCard movie={moviewData} navigation={navigation} />
+        <MovieCard category={value} movie={moviewData} navigation={navigation} />
       </View>
     )
   }

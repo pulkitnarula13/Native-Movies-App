@@ -2,9 +2,9 @@ import React from 'react';
 import { Box, Text, Image, Button, Flex } from 'native-base';
 
 const MovieCard = (props) => {
-    console.log(props, "prsops");
 
     return (
+
         <Flex direction='row' mb={2}>
             <Image
                 source={{
@@ -22,9 +22,9 @@ const MovieCard = (props) => {
                 <Button
 
                     onPress={() => {
-                        navigation.navigate('detailPageComponent', {
+                        props.navigation.navigate('DetailScreen', {
                             title: props.movie.item.title,
-                            category: props.movie.item.category,
+                            category: props.category,
                             id: props.movie.item.id
                         });
                     }}

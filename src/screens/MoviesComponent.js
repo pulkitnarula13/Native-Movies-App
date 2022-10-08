@@ -6,7 +6,6 @@ import MovieCard from '../components/MovieCard';
 
 const MoviesComponent = ({navigation}) => {
 
-
     const [value, setValue] = useState("movie");
     const [sort, setSort] = useState("upcoming");
     const [data, setData] = useState([]);
@@ -14,14 +13,14 @@ const MoviesComponent = ({navigation}) => {
     function getData() {
         axios.get(`${BASE_URL}/${value}/${sort}?api_key=${API_KEY}&language=en-US&page=1`).then(function (response) {
             setData(response.data.results);
-            console.log(response.data);
         })
     };
 
     const renderItem = (moviewData) => {
+        console.log(moviewData, "movie");
         return (
             <View>
-                <MovieCard movie={moviewData} navigation={navigation} />
+                <MovieCard category={"movie"} movie={moviewData} navigation={navigation} />
             </View>
         )
     }
