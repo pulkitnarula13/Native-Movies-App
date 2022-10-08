@@ -15,8 +15,8 @@ const MovieCard = (props) => {
                 height='auto'
                 mr={3}
             />
-            <Box width='70%'>
-                <Text fontWeight='600'>{props.movie.item.title}</Text>
+            <Box width='60%'>
+                <Text fontWeight='600'>{props.movie.item.title ? props.movie.item.title : props.movie.item.name}</Text>
                 <Text>Popularity: {props.movie.item.popularity}</Text>
                 <Text>Release Data: {props.movie.item.releaseDate}</Text>
                 <Button
